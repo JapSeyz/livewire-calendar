@@ -1,6 +1,6 @@
 <?php
 
-namespace Rabol\LivewireCalendar;
+namespace JapSeyz\LivewireCalendar;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
