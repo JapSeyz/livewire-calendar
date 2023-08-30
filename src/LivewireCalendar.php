@@ -480,7 +480,7 @@ class LivewireCalendar extends Component
         if ($this->calendarMode == self::CALENDAR_MODE_MONTH) {
             return view($this->calendarView)
                 ->with([
-                    'componentId' => $this->id,
+                    'componentId' => $this->getId(),
                     'monthGrid' => $this->monthGrid(),
                     'events' => $events,
                     'getEventsForDay' => function ($day) use ($events) {
@@ -492,7 +492,7 @@ class LivewireCalendar extends Component
         if ($this->calendarMode == self::CALENDAR_MODE_WEEK) {
             return view($this->calendarView)
                 ->with([
-                    'componentId' => $this->id,
+                    'componentId' => $this->getId(),
                     'weekGrid' => $this->weekGrid(),
                     'events' => $events,
                     'getEventsForDay' => function ($day) use ($events) {
