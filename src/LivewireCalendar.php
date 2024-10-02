@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Collection;
 use Illuminate\View\View;
 use Livewire\Component;
+use function config;
 
 /**
  * Class LivewireCalendar
@@ -364,8 +365,8 @@ class LivewireCalendar extends Component
      */
     public function monthGrid(): Collection
     {
-        $firstDayOfGrid = $this->gridStartsAt;
-        $lastDayOfGrid = $this->gridEndsAt;
+        $firstDayOfGrid = $this->gridStartsAt->setTimezone(config('app.timezone'));
+        $lastDayOfGrid = $this->gridEndsAt->setTimezone(config('app.timezone'));
 
         $numbersOfWeeks = $lastDayOfGrid->diffInWeeks($firstDayOfGrid) + 1;
         $days = $lastDayOfGrid->diffInDays($firstDayOfGrid) + 1;
